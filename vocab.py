@@ -18,7 +18,7 @@ def read_pdf_to_json(file_path):
             if row[0] in ["der", "die", "das"] and row[1][0].isupper():
                 vocab.append({"id": index, "name": row[1], "gender": genders[row[0]]})
                 index += 1
-    file_name = file_path.replace('.pdf', '') + '.json'
+    file_name = 'Vocab_jsons\\' + file_path.replace('.pdf', '').replace('Vocab\\', '') + '.json'
     with open(file_name, 'w') as file:
         json.dump(vocab, file)
 
